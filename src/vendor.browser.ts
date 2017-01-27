@@ -13,6 +13,8 @@ import '@angular/common';
 import '@angular/forms';
 import '@angular/http';
 import '@angular/router';
+import "@angular/material";
+
 
 // AngularClass
 import '@angularclass/hmr';
@@ -20,6 +22,8 @@ import '@angularclass/hmr';
 // RxJS
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';
+
+import "qiniu.js";
 
 if ('production' === ENV) {
   // Production

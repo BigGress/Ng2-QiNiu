@@ -1,0 +1,15 @@
+.picture-component {
+    padding: 8px;
+
+    .images-list {
+        .image-detail {
+            list-style: none;
+
+            text-align: center;
+        }
+    }
+
+    .subtitle {
+        border-bottom: 1px solid #ebebeb;
+    }
+}

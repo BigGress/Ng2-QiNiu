@@ -1,0 +1,17 @@
+<article class="detail-category-component" in-out>
+    <md-toolbar>
+        <h2>{{title}}</h2>
+    </md-toolbar>
+    <ul class="picture-list show-list" layout="row">
+        <li *ngFor="let item of pictures" [style.background-image]="item.photos.length ? 'url(' + item.photos[0] + ')' : ''"
+            routerLink="../../picture/{{item.id}}">
+            <article class="content-box">
+                <h4>{{item.title}}</h4>
+                <p>{{item.content}}</p>
+            </article>
+        </li>
+    </ul>
+    <div *ngIf="!pictures.length" class="no-data">
+        <p>暂无图片</p>
+    </div>
+</article>

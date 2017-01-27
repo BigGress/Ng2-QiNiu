@@ -1,0 +1,93 @@
+<article class="category-component" layout="row" in-out>
+    <md-card flex="30%">
+        <h3>分类表单</h3>
+        <form class="category-form" #categoryForm="ngForm" (ngSubmit)="onSubmit($event)">
+            <div>
+                <md-input placeholder="标题" name="title" [(ngModel)]="data.title"></md-input>
+            </div>
+            <div>
+                <md-input placeholder="名字" name="name" [(ngModel)]="data.name"></md-input>
+            </div>
+            <div>
+                <md-input placeholder="副标题" name="subtitle" [(ngModel)]="data.subtitle"></md-input>
+            </div>
+            <div>
+                <md-radio-group [(ngModel)]="imageInput" [ngModelOptions]="{standalone: true}">
+                    <md-list>
+                        <div md-list-item>
+                            <md-radio-button value="url">
+                                <md-input placeholder="图片" name="cover_url" [(ngModel)]="data.coverObj.url"></md-input>
+                            </md-radio-button>
+                        </div>
+                        <div md-list-item>
+                            <md-radio-button value="file">
+                                <button md-raised-button (click)="openFileSelect($event)">上传图片</button>
+                                <article>
+                                    <img [src]="showFile" *ngIf="showFile" alt="">
+                                </article>
+                            </md-radio-button>
+                        </div>
+                    </md-list>
+                </md-radio-group>
+            </div>
+            <!--<figure>
+                <label>标题:</label>
+                <input type="text" name="title"
+                    [(ngModel)]="data.title" required>
+            </figure>
+            <figure>
+                <label>名字:</label>
+                <input type="text" name="name" #name
+                    [(ngModel)]="data.name">
+            </figure>
+            <figure>
+                <label>副标题:</label>
+                <input type="text" name="subtitle"
+                    [(ngModel)]="data.subtitle">
+            </figure>
+            <figure>
+                <label>图片:</label>
+                <span>
+                    <input type="radio" name="fileType" (click)="imageInput = 'url'">
+                    <input type="text" name="cover_url" [(ngModel)]="data.coverObj.url">
+                </span>
+                <div class="file-image">
+                    <input type="radio" name="fileType" (click)="imageInput = 'file'">
+                    <input type="file" name="cover_select" (change)="updateImage($event)">
+                </div>
+            </figure>-->
+            <div class="action-btn">
+                <button type="submit" md-raised-button class="primary" [disabled]="!categoryForm.valid">创建</button>
+                <button type="reset" md-raised-button>重制</button>
+                <button (click)="back($event)" type="button" md-raised-button>返回</button>
+            </div>
+        </form>
+    </md-card>
+    <md-card>
+        <table class="base-table" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>标题</th>
+                    <th>名字</th>
+                    <th>副标题</th>
+                    <th>图片</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of categories">
+                    <td>{{item.title}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.subtitle}}</td>
+                    <td>
+                        <img class="category-image" *ngIf="item.cover" [i-src]="item.cover" [alt]="item.title">
+                    </td>
+                    <td>
+                        <button class="icon-btn" (click)="deleteTheCategory(item)">&#215;</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </md-card>
+
+</article>

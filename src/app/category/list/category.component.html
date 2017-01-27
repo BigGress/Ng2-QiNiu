@@ -1,0 +1,14 @@
+<article class="category-component" in-out>
+    <md-toolbar class="primary">
+        分类
+    </md-toolbar>
+    <ul class="category-list show-list" layout="row">
+        <li *ngFor="let item of categories" routerLink="./{{item.id}}"
+            [style.background-image]="'url(' + item.cover + ')'">
+            <article class="content-box">
+                <h3>{{item.title}}</h3>
+                <p class="single-line">{{item.name ? item.name : ""}}</p>
+            </article>
+        </li>
+    </ul>
+</article>

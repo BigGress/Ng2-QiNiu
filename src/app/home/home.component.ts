@@ -4,6 +4,8 @@ import { AppState } from '../app.service';
 import { Title } from './title';
 import { XLarge } from './x-large';
 
+import { Config } from "../models/Config";
+
 @Component({
   // The selector is what angular internally uses
   // for `document.querySelectorAll(selector)` in our index.html
@@ -24,6 +26,12 @@ export class HomeComponent {
   // TypeScript public modifiers
   constructor(public appState: AppState, public title: Title) {
 
+  }
+
+  update() {
+      Config.update("test2",{
+          title: 123,
+      })
   }
 
   ngOnInit() {

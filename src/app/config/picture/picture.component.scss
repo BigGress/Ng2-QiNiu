@@ -1,0 +1,22 @@
+.picture-component {
+
+    md-card:first-child {
+        max-width: 200px;
+
+        margin-right: 8px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    md-card {
+        img {
+            max-width: 200px;
+        }
+    }
+
+    form div {
+        margin-bottom: 10px;
+    }
+}

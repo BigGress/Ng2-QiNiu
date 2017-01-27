@@ -1,0 +1,20 @@
+<article class="picture-component" in-out>
+    <md-card *ngIf="detailData">
+        <header>
+            <h2>{{detailData.title}}</h2>
+
+            <p class="subtitle">
+                <span>分类: {{detailData.category.title}}</span>
+                <span>时间: {{detailData.id | date: 'yyyy-MM-dd HH:mm'}}</span>
+            </p>
+        </header>
+        <main>
+            <p>{{detailData.content}}</p>
+            <ul class="images-list">
+                <li class="image-detail" *ngFor="let item of detailData.photos">
+                    <img [src]="item" alt="">
+                </li>
+            </ul>
+        </main>
+    </md-card>
+</article>

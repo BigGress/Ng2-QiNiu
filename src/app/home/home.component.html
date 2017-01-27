@@ -1,3 +1,7 @@
+<div class="test">
+    <a routerLink="/category">分类</a>
+    <a routerLink="/setting">设置</a>
+</div>
 <div class="card-container">
   <h1 x-large class="sample-content">Your Content Here</h1>
 
@@ -16,6 +20,7 @@
 
   <div>
     <h4>Local State</h4>
+    <button (click)="update()">test</button>
 
     <form (ngSubmit)="submitState(localState.value)" autocomplete="off">
 

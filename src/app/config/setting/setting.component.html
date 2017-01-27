@@ -1,0 +1,43 @@
+<!--<h4>设置</h4>
+<article class="main">
+    <nav class="border left">
+        <ul>
+            <li>
+                <a routerLinkActive="active" routerLink="./category">分类</a>
+            </li>
+            <li>
+                <a routerLinkActive="active" routerLink="./product">产品</a>
+            </li>
+        </ul>
+    </nav>
+    <main class="right">
+        <router-outlet></router-outlet>
+    </main>
+</article>-->
+<article layout="column" class="setting-component">
+    <md-sidenav-layout>
+        <md-sidenav #list mode="side" opened="true">
+            <md-toolbar>
+                <h2>导航栏</h2>
+            </md-toolbar>
+            <br>
+            <md-list class="app-list">
+                <md-list-item routerLinkActive="active" routerLink="./category">
+                    <span>分类</span>
+                </md-list-item>
+                <md-list-item routerLinkActive="active" routerLink="./product">
+                    <span>图片</span>
+                </md-list-item>
+            </md-list>
+        </md-sidenav>
+
+        <md-toolbar class="primary">
+            <button (click)="list.toggle()">menu</button>
+        </md-toolbar>
+
+        <div class="app-content">
+            <router-outlet></router-outlet>
+        </div>
+    </md-sidenav-layout>
+</article>
+

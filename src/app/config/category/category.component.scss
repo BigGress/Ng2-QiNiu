@@ -1,0 +1,62 @@
+.category-component {
+    md-card {
+        margin-right: 8px;
+    }
+
+    input.md-radio-input {
+        display: none;
+    }
+
+    ul {
+        li {
+            list-style: none;
+        }
+    }
+
+    // 分类图片
+    .category-image {
+        max-height: 50px;
+    }
+
+    .category-form {
+        figure {
+            margin: 0;
+            margin-bottom: 5px;
+        }
+
+        label {
+            display: inline-block;
+
+            width: 70px;
+            text-align: right;
+        }
+
+        .file-image {
+            margin-left: 75px;
+
+            input[type="file"] {
+                border: none;
+                margin-top: 5px;
+
+                outline: none;
+                -webkit-appearance: none;
+            }
+        }
+
+        input[type="text"] {
+            height: 20px;
+
+            border-radius: 3px;
+            border: 1px solid rgb(220, 220, 220);
+
+            outline: none;
+            -webkit-appearance: none;
+
+            padding-left: .5rem;
+        }
+    }
+
+    .action-btn {
+        margin-top: 24px;
+    }
+}

@@ -78,7 +78,9 @@ module.exports = function (options) {
 
       // An array of directory names to be resolved to the current directory
       modules: [helpers.root('src'), helpers.root('node_modules')],
-
+       alias: {
+            '@angular/material': '@angular/material/bundles/material.umd.js',
+        },
     },
 
     /*
@@ -146,6 +148,10 @@ module.exports = function (options) {
           use: 'file-loader'
         },
 
+        {
+            test: /\.scss$/,
+            use: ["to-string-loader","css-loader","sass-loader"]
+        },
       ],
 
     },

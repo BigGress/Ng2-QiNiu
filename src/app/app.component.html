@@ -1,0 +1,8 @@
+<md-toolbar class="md-primary">
+    <button class="md-icon-button" (click)="back()" *ngIf="!isNeedBack">
+        <md-icon>keyboard_backspace</md-icon>
+    </button>
+</md-toolbar>
+<main>
+    <router-outlet></router-outlet>
+</main>
